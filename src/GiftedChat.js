@@ -473,6 +473,13 @@ class GiftedChat extends React.Component {
   }
 
   render() {
+    let { style } = this.props;
+
+    if (style.container) {
+      console.log("STYLES ON CONTAINER", style);
+      styles.container = Object.assign(styles.container, style.container);
+    }
+
     if (this.state.isInitialized === true) {
       return (
         <ActionSheet ref={(component) => (this._actionSheetRef = component)}>
@@ -557,6 +564,7 @@ GiftedChat.defaultProps = {
   maxInputLength: null,
   forceGetKeyboardHeight: false,
   inverted: true,
+  style: {}
 };
 
 GiftedChat.propTypes = {
@@ -607,6 +615,7 @@ GiftedChat.propTypes = {
   forceGetKeyboardHeight: PropTypes.bool,
   inverted: PropTypes.bool,
   textInputProps: PropTypes.object,
+  styles: PropTypes.object
 };
 
 export {
