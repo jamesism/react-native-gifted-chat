@@ -473,13 +473,6 @@ class GiftedChat extends React.Component {
   }
 
   render() {
-    let { style } = this.props;
-
-    if (style.container) {
-      console.log("STYLES ON CONTAINER", style);
-      styles.container = Object.assign(styles.container, style.container);
-    }
-
     if (this.state.isInitialized === true) {
       return (
         <ActionSheet ref={(component) => (this._actionSheetRef = component)}>
@@ -502,6 +495,7 @@ class GiftedChat extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000'
   },
 });
 
